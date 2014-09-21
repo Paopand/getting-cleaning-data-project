@@ -1,0 +1,56 @@
+---
+title: "Code Book"
+---
+
+## Raw Data
+
+The data were collected in the project "Human Activity Recognition Using Smartphones" [[1](#authors)]
+
+[The source data (and their description) for this project  can be found here.](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
+
+We report here the most relevant aspects for the comprehension of the data.
+
+### Data set Information
+
+The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. 
+
+Using its embedded accelerometer and gyroscope, were captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. 
+
+The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
+
+### Attribute Information
+
+For each record in the dataset it is provided: 
+
+* Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration. 
+* Triaxial Angular velocity from the gyroscope. 
+* A 561-feature vector with time and frequency domain variables. 
+* Its activity label. 
+* An identifier of the subject who carried out the experiment.
+
+## Elaborated Data
+
+The raw data sets are processed with the run_analisys.R script. The result is a data set where selected numeric variables are averaged for each activity and each subject.
+
+The processing steps are:
+
+* Merge Training and Test Sets
+* Extract mean and standard deviation variables
+* Give descriptive names to the activities
+* Give descriptive lables to the variables selected
+* Create a date set where extracted numeric variables are averaged for each activity and each subject.
+* Store a copy of the data set in a text file (avg_mean_std_by_activity_and_subject.txt)
+
+The data set contains 10299 observations with 81 variables divided in:
+
+* an activity label (ActivityId): WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
+* an identifier of the subject who carried out the experiment (Subject): 1, 3, 5, 6, 7, 8, 11, 14, 15, 16, 17, 19, 21, 22, 23, 25, 26, 27, 28, 29, 30
+* a 79-feature vector with time and frequency domain signal variables (numeric)
+
+
+References
+----------
+
+1. <a name="har-smart"/>Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz.
+   *Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine*.
+   International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
